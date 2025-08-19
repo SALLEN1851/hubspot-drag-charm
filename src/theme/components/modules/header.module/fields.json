@@ -1,0 +1,64 @@
+[
+  {
+    "id": "navigation_items",
+    "label": "Navigation Items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 8,
+      "default": 5
+    },
+    "default": [
+      { "text": "Home", "url": "/" },
+      { "text": "About", "url": "/about" },
+      { "text": "Services", "url": "/services" },
+      { "text": "Blog", "url": "/blog" },
+      { "text": "Contact", "url": "/contact" }
+    ],
+    "children": [
+      {
+        "id": "text",
+        "label": "Link Text",
+        "type": "text"
+      },
+      {
+        "id": "url",
+        "label": "Link URL",
+        "type": "url"
+      },
+      {
+        "id": "dropdown_items",
+        "label": "Dropdown Items (optional)",
+        "type": "group",
+        "occurrence": {
+          "min": 0,
+          "max": 5
+        },
+        "children": [
+          {
+            "id": "text",
+            "label": "Dropdown Link Text",
+            "type": "text"
+          },
+          {
+            "id": "url",
+            "label": "Dropdown Link URL",
+            "type": "url"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cta_button_text",
+    "label": "CTA Button Text",
+    "type": "text",
+    "default": "Get Started"
+  },
+  {
+    "id": "cta_button_url",
+    "label": "CTA Button URL",
+    "type": "url",
+    "default": "/contact"
+  }
+]

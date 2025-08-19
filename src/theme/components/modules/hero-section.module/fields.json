@@ -1,0 +1,47 @@
+[
+  {
+    "id": "hero_title",
+    "label": "Hero Title",
+    "type": "richtext",
+    "default": "Transform Your<br><span class=\"text-accent\">Business Vision</span><br>Into Reality"
+  },
+  {
+    "id": "hero_subtitle", 
+    "label": "Hero Subtitle",
+    "type": "richtext",
+    "default": "Unlock growth potential with our innovative solutions designed to elevate your business to new heights."
+  },
+  {
+    "id": "hero_background",
+    "label": "Hero Background Image",
+    "type": "image",
+    "default": {
+      "src": "",
+      "alt": "Hero Background"
+    }
+  },
+  {
+    "id": "primary_button_text",
+    "label": "Primary Button Text",
+    "type": "text",
+    "default": "Get Started Today"
+  },
+  {
+    "id": "primary_button_url",
+    "label": "Primary Button URL",
+    "type": "url",
+    "default": "#"
+  },
+  {
+    "id": "secondary_button_text",
+    "label": "Secondary Button Text", 
+    "type": "text",
+    "default": "Learn More"
+  },
+  {
+    "id": "secondary_button_url",
+    "label": "Secondary Button URL",
+    "type": "url",
+    "default": "#"
+  }
+]

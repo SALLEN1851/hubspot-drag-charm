@@ -1,0 +1,41 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Business Pro Home Page
+  screenshotPath: ../assets/home-template-preview.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+<!-- Hero Section -->
+{% dnd_area "hero_section" label="Hero Section", class="dnd-hero-section" %}
+  {% dnd_module path="../components/modules/hero-section.module" %}
+  {% end_dnd_module %}
+{% end_dnd_area %}
+
+<!-- Features Section -->
+{% dnd_area "features_section" label="Features Section", class="dnd-features-section" %}
+  {% dnd_module path="../components/modules/features-section.module" %}
+  {% end_dnd_module %}
+{% end_dnd_area %}
+
+<!-- About Section -->
+{% dnd_area "about_section" label="About Section", class="dnd-about-section" %}
+  {% dnd_module path="../components/modules/about-section.module" %}
+  {% end_dnd_module %}
+{% end_dnd_area %}
+
+<!-- Testimonials Section -->
+{% dnd_area "testimonials_section" label="Testimonials Section", class="dnd-testimonials-section" %}
+  {% dnd_module path="../components/modules/testimonials-section.module" %}
+  {% end_dnd_module %}
+{% end_dnd_area %}
+
+<!-- CTA Section -->
+{% dnd_area "cta_section" label="Call to Action Section", class="dnd-cta-section" %}
+  {% dnd_module path="../components/modules/cta-section.module" %}
+  {% end_dnd_module %}
+{% end_dnd_area %}
+
+{% endblock body %}

@@ -1,0 +1,11 @@
+{
+  "label": "Business Pro Theme",
+  "screenshot_path": "./assets/theme-preview.png",
+  "author": "Business Pro Team", 
+  "author_email": "hello@businesspro.com",
+  "description": "A modern, professional theme built for HubSpot's drag-and-drop editor. Perfect for business websites with modular sections.",
+  "version": "1.0.0",
+  "tags": ["business", "professional", "react", "modular"],
+  "enable_domain_stylesheets": false,
+  "enable_layout_stylesheets": false
+}

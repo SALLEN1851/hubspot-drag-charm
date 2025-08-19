@@ -1,0 +1,92 @@
+[
+  {
+    "id": "section_badge",
+    "label": "Section Badge",
+    "type": "text",
+    "default": "Client Success Stories"
+  },
+  {
+    "id": "section_title",
+    "label": "Section Title", 
+    "type": "richtext",
+    "default": "What Our Clients<br><span class=\"text-primary\">Are Saying</span>"
+  },
+  {
+    "id": "section_subtitle",
+    "label": "Section Subtitle",
+    "type": "richtext",
+    "default": "Don't just take our word for it. Here's what our clients have to say about their experience."
+  },
+  {
+    "id": "testimonials",
+    "label": "Testimonials",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 3
+    },
+    "default": [
+      {
+        "name": "Sarah Johnson",
+        "role": "CEO",
+        "company": "TechStart Inc",
+        "content": "This platform has completely transformed how we operate. The results speak for themselves - we've seen a 300% increase in efficiency.",
+        "rating": 5
+      },
+      {
+        "name": "Michael Chen",
+        "role": "Director of Operations",
+        "company": "Global Solutions",
+        "content": "The team's expertise and dedication to our success has been outstanding. They delivered beyond our expectations.",
+        "rating": 5
+      },
+      {
+        "name": "Emily Rodriguez",
+        "role": "Marketing Director",
+        "company": "Creative Agency",
+        "content": "Working with them was a game-changer. Our campaigns now perform 250% better than before. Highly recommended!",
+        "rating": 5
+      }
+    ],
+    "children": [
+      {
+        "id": "name",
+        "label": "Client Name",
+        "type": "text"
+      },
+      {
+        "id": "role",
+        "label": "Client Role/Title",
+        "type": "text"
+      },
+      {
+        "id": "company",
+        "label": "Company Name",
+        "type": "text"
+      },
+      {
+        "id": "content",
+        "label": "Testimonial Content",
+        "type": "richtext"
+      },
+      {
+        "id": "rating",
+        "label": "Star Rating (1-5)",
+        "type": "number",
+        "min": 1,
+        "max": 5,
+        "default": 5
+      },
+      {
+        "id": "avatar_image",
+        "label": "Client Photo (optional)",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Client photo"
+        }
+      }
+    ]
+  }
+]

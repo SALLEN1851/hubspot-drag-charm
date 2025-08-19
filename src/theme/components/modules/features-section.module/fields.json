@@ -1,0 +1,91 @@
+[
+  {
+    "id": "section_badge",
+    "label": "Section Badge",
+    "type": "text",
+    "default": "Why Choose Us"
+  },
+  {
+    "id": "section_title",
+    "label": "Section Title",
+    "type": "richtext",
+    "default": "Powerful Features for<br><span class=\"text-primary\">Modern Businesses</span>"
+  },
+  {
+    "id": "section_subtitle",
+    "label": "Section Subtitle", 
+    "type": "richtext",
+    "default": "Everything you need to transform your business operations and achieve sustainable growth."
+  },
+  {
+    "id": "features",
+    "label": "Features",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 6
+    },
+    "default": [
+      {
+        "title": "Lightning Fast",
+        "description": "Optimized performance that delivers results at the speed of business.",
+        "icon": "fas fa-bolt",
+        "badge": "Performance"
+      },
+      {
+        "title": "Enterprise Security",
+        "description": "Bank-level security protocols to protect your most valuable assets.",
+        "icon": "fas fa-shield-alt",
+        "badge": "Security"
+      },
+      {
+        "title": "Rapid Deployment",
+        "description": "Get up and running in minutes, not months, with our streamlined process.",
+        "icon": "fas fa-rocket",
+        "badge": "Efficiency"
+      },
+      {
+        "title": "Team Collaboration",
+        "description": "Seamless collaboration tools that bring your team together.",
+        "icon": "fas fa-users",
+        "badge": "Teamwork"
+      },
+      {
+        "title": "Advanced Analytics",
+        "description": "Data-driven insights to make informed decisions and drive growth.",
+        "icon": "fas fa-chart-bar",
+        "badge": "Analytics"
+      },
+      {
+        "title": "Innovation First",
+        "description": "Cutting-edge technology that keeps you ahead of the competition.",
+        "icon": "fas fa-lightbulb",
+        "badge": "Innovation"
+      }
+    ],
+    "children": [
+      {
+        "id": "title",
+        "label": "Feature Title",
+        "type": "text"
+      },
+      {
+        "id": "description", 
+        "label": "Feature Description",
+        "type": "richtext"
+      },
+      {
+        "id": "icon",
+        "label": "Feature Icon (FontAwesome class)",
+        "type": "text",
+        "help_text": "Enter FontAwesome icon class (e.g., 'fas fa-bolt')"
+      },
+      {
+        "id": "badge",
+        "label": "Feature Badge",
+        "type": "text"
+      }
+    ]
+  }
+]

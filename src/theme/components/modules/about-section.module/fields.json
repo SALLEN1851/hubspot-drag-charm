@@ -1,0 +1,88 @@
+[
+  {
+    "id": "section_badge",
+    "label": "Section Badge",
+    "type": "text",
+    "default": "About Our Company"
+  },
+  {
+    "id": "section_title",
+    "label": "Section Title",
+    "type": "richtext",
+    "default": "Building the Future of<br><span class=\"text-primary\">Digital Innovation</span>"
+  },
+  {
+    "id": "section_description",
+    "label": "Section Description",
+    "type": "richtext",
+    "default": "For over a decade, we've been at the forefront of digital transformation, helping businesses navigate the complex landscape of modern technology. Our commitment to excellence and innovation has made us a trusted partner for companies worldwide."
+  },
+  {
+    "id": "feature_list",
+    "label": "Feature List",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 5,
+      "default": 3
+    },
+    "default": [
+      { "text": "Proven track record of success" },
+      { "text": "Expert team of professionals" },
+      { "text": "Cutting-edge technology solutions" }
+    ],
+    "children": [
+      {
+        "id": "text",
+        "label": "Feature Text",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "id": "cta_button_text",
+    "label": "CTA Button Text",
+    "type": "text",
+    "default": "Learn More About Us"
+  },
+  {
+    "id": "cta_button_url",
+    "label": "CTA Button URL",
+    "type": "url",
+    "default": "/about"
+  },
+  {
+    "id": "stats",
+    "label": "Statistics",
+    "type": "group",
+    "occurrence": {
+      "min": 2,
+      "max": 4,
+      "default": 4
+    },
+    "default": [
+      { "number": "10K+", "label": "Happy Clients", "icon": "fas fa-check-circle" },
+      { "number": "99%", "label": "Success Rate", "icon": "fas fa-chart-line" },
+      { "number": "50+", "label": "Industry Awards", "icon": "fas fa-trophy" },
+      { "number": "24/7", "label": "Support Available", "icon": "fas fa-headset" }
+    ],
+    "children": [
+      {
+        "id": "number",
+        "label": "Statistic Number",
+        "type": "text"
+      },
+      {
+        "id": "label",
+        "label": "Statistic Label",
+        "type": "text"
+      },
+      {
+        "id": "icon",
+        "label": "Statistic Icon (FontAwesome class)",
+        "type": "text",
+        "help_text": "Enter FontAwesome icon class (e.g., 'fas fa-chart-line')"
+      }
+    ]
+  }
+]

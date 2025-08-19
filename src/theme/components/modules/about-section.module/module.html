@@ -1,0 +1,153 @@
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      
+      <!-- Content Column -->
+      <div class="about-content">
+        {% if module.section_badge %}
+          <span class="section-badge">{{ module.section_badge }}</span>
+        {% endif %}
+        
+        <h2 class="section-title">{{ module.section_title or "Building the Future of Digital Innovation" }}</h2>
+        
+        <div class="about-description">
+          {{ module.section_description or "For over a decade, we've been at the forefront of digital transformation, helping businesses navigate the complex landscape of modern technology. Our commitment to excellence and innovation has made us a trusted partner for companies worldwide." }}
+        </div>
+        
+        <!-- Feature List -->
+        {% if module.feature_list %}
+          <ul class="feature-list">
+            {% for item in module.feature_list %}
+              <li class="feature-item">
+                <i class="fas fa-check-circle"></i>
+                <span>{{ item.text }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        
+        <!-- CTA Button -->
+        {% if module.cta_button_text %}
+          <div class="about-cta">
+            <a href="{{ module.cta_button_url or '#' }}" class="btn btn-primary">
+              {{ module.cta_button_text }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+      
+      <!-- Stats Column -->
+      <div class="about-stats">
+        {% for stat in module.stats %}
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="{{ stat.icon or 'fas fa-chart-line' }}"></i>
+            </div>
+            <div class="stat-content">
+              <div class="stat-number">{{ stat.number }}</div>
+              <div class="stat-label">{{ stat.label }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+.about-section {
+  padding: 5rem 0;
+  background: hsl(var(--background));
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-content .section-title {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.about-description {
+  font-size: 1.125rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: hsl(var(--foreground));
+}
+
+.feature-item i {
+  color: hsl(var(--primary));
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elegant);
+}
+
+.stat-icon {
+  margin-bottom: 1rem;
+}
+
+.stat-icon i {
+  color: hsl(var(--primary));
+  font-size: 2rem;
+  transition: var(--transition-bounce);
+}
+
+.stat-card:hover .stat-icon i {
+  transform: scale(1.1);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: hsl(var(--muted-foreground));
+  font-weight: 500;
+}
+</style>

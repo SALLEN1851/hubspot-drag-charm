@@ -1,0 +1,39 @@
+{
+  "name": "business-pro-hubspot-theme",
+  "version": "1.0.0",
+  "description": "A modern, professional HubSpot CMS theme with React components and drag-and-drop modules",
+  "main": "index.js",
+  "scripts": {
+    "start": "hs cms-theme-dev",
+    "build": "hs project upload",
+    "watch": "hs filemanager watch --src=src --dest=dist",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --write ."
+  },
+  "keywords": [
+    "hubspot",
+    "cms",
+    "theme",
+    "react",
+    "business",
+    "professional",
+    "drag-and-drop"
+  ],
+  "author": "Business Pro Team",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@hubspot/cms-dev-server": "^2.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^4.9.0",
+    "prettier": "^2.8.0",
+    "eslint": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

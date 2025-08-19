@@ -1,0 +1,173 @@
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      {% if module.section_badge %}
+        <span class="section-badge">{{ module.section_badge }}</span>
+      {% endif %}
+      <h2 class="section-title">{{ module.section_title or "What Our Clients Are Saying" }}</h2>
+      <p class="section-subtitle">{{ module.section_subtitle or "Don't just take our word for it. Here's what our clients have to say about their experience." }}</p>
+    </div>
+    
+    <div class="testimonials-grid">
+      {% for testimonial in module.testimonials %}
+        <div class="testimonial-card">
+          <div class="testimonial-quote">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          
+          <div class="testimonial-content">
+            <p class="testimonial-text">"{{ testimonial.content }}"</p>
+          </div>
+          
+          <div class="testimonial-rating">
+            {% for i in range(testimonial.rating or 5) %}
+              <i class="fas fa-star"></i>
+            {% endfor %}
+          </div>
+          
+          <div class="testimonial-author">
+            <div class="author-avatar">
+              {% if testimonial.avatar_image.src %}
+                <img src="{{ testimonial.avatar_image.src }}" alt="{{ testimonial.name }}" class="avatar-img">
+              {% else %}
+                <div class="avatar-placeholder">
+                  <span>{{ testimonial.name[:2] or 'AA' }}</span>
+                </div>
+              {% endif %}
+            </div>
+            <div class="author-info">
+              <div class="author-name">{{ testimonial.name }}</div>
+              <div class="author-role">{{ testimonial.role }}</div>
+              {% if testimonial.company %}
+                <div class="author-company">{{ testimonial.company }}</div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.testimonials-section {
+  padding: 5rem 0;
+  background: var(--gradient-subtle);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.testimonial-card {
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-elegant);
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+.testimonial-quote {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-quote i {
+  color: hsl(var(--primary) / 0.3);
+  font-size: 2rem;
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover .testimonial-quote i {
+  color: hsl(var(--primary) / 0.5);
+}
+
+.testimonial-text {
+  color: hsl(var(--muted-foreground));
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-rating i {
+  color: #fbbf24;
+  font-size: 1rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--primary-foreground));
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.author-name {
+  font-weight: 600;
+  color: hsl(var(--card-foreground));
+  transition: var(--transition-smooth);
+}
+
+.testimonial-card:hover .author-name {
+  color: hsl(var(--primary));
+}
+
+.author-role {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.author-company {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+</style>

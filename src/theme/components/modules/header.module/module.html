@@ -1,0 +1,309 @@
+<header class="site-header">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-content">
+        
+        <!-- Logo -->
+        <div class="navbar-brand">
+          <a href="/" class="brand-link">
+            {% if theme_settings.company_logo.src %}
+              <img src="{{ theme_settings.company_logo.src }}" alt="{{ theme_settings.company_logo.alt or theme_settings.company_name }}" class="logo-img">
+            {% else %}
+              <div class="logo-placeholder">
+                <span>{{ theme_settings.company_name[:1] or 'B' }}</span>
+              </div>
+            {% endif %}
+            <span class="brand-text">{{ theme_settings.company_name or 'Business Pro' }}</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="navbar-nav">
+          {% for item in module.navigation_items %}
+            {% if item.dropdown_items %}
+              <div class="nav-dropdown">
+                <a href="{{ item.url }}" class="nav-link dropdown-trigger">
+                  {{ item.text }}
+                  <i class="fas fa-chevron-down"></i>
+                </a>
+                <div class="dropdown-menu">
+                  {% for dropdown_item in item.dropdown_items %}
+                    <a href="{{ dropdown_item.url }}" class="dropdown-link">{{ dropdown_item.text }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+            {% else %}
+              <a href="{{ item.url }}" class="nav-link">{{ item.text }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <!-- CTA Button -->
+        {% if module.cta_button_text %}
+          <div class="navbar-cta">
+            <a href="{{ module.cta_button_url or '#' }}" class="btn btn-primary">
+              {{ module.cta_button_text }}
+            </a>
+          </div>
+        {% endif %}
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <div class="mobile-menu-content">
+      {% for item in module.navigation_items %}
+        {% if item.dropdown_items %}
+          <div class="mobile-nav-dropdown">
+            <a href="{{ item.url }}" class="mobile-nav-link dropdown-trigger">
+              {{ item.text }}
+              <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="mobile-dropdown-menu">
+              {% for dropdown_item in item.dropdown_items %}
+                <a href="{{ dropdown_item.url }}" class="mobile-dropdown-link">{{ dropdown_item.text }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        {% else %}
+          <a href="{{ item.url }}" class="mobile-nav-link">{{ item.text }}</a>
+        {% endif %}
+      {% endfor %}
+      
+      {% if module.cta_button_text %}
+        <div class="mobile-cta">
+          <a href="{{ module.cta_button_url or '#' }}" class="btn btn-primary">
+            {{ module.cta_button_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</header>
+
+<style>
+/* Header Styles */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid hsl(var(--border));
+  transition: var(--transition-smooth);
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.navbar-brand .brand-link {
+  display: flex;
+  align-items: center;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+}
+
+.logo-placeholder {
+  width: 2rem;
+  height: 2rem;
+  background: var(--gradient-primary);
+  border-radius: calc(var(--radius) / 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+}
+
+.logo-placeholder span {
+  color: hsl(var(--primary-foreground));
+  font-weight: 700;
+}
+
+.logo-img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  margin-right: 0.75rem;
+}
+
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.navbar-nav {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .navbar-nav {
+    display: flex;
+  }
+}
+
+.nav-link {
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link:hover {
+  color: hsl(var(--primary));
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-elegant);
+  padding: 0.5rem 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition-smooth);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.dropdown-link:hover {
+  background: hsl(var(--accent));
+  color: hsl(var(--primary));
+}
+
+.navbar-cta {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .navbar-cta {
+    display: block;
+  }
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+}
+
+.hamburger {
+  width: 1.5rem;
+  height: 2px;
+  background: hsl(var(--foreground));
+  border-radius: 1px;
+  transition: var(--transition-smooth);
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-bottom: 1px solid hsl(var(--border));
+  box-shadow: var(--shadow-card);
+}
+
+.mobile-menu.open {
+  display: block;
+}
+
+.mobile-menu-content {
+  padding: 1rem;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 0.75rem 0;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid hsl(var(--border));
+  transition: var(--transition-smooth);
+}
+
+.mobile-nav-link:hover {
+  color: hsl(var(--primary));
+}
+
+.mobile-cta {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.mobile-cta .btn {
+  width: 100%;
+}
+
+/* Add padding to body to account for fixed header */
+body {
+  padding-top: 4rem;
+}
+</style>
+
+<script>
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.querySelector('.mobile-menu');
+  
+  if (toggle && menu) {
+    toggle.addEventListener('click', function() {
+      menu.classList.toggle('open');
+    });
+  }
+});
+</script>

@@ -1,0 +1,37 @@
+{% set hero_bg = module.hero_background.src or get_asset_url("../../assets/hero-bg.jpg") %}
+
+<section class="hero-section" style="background-image: url('{{ hero_bg }}');">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="container">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          {{ module.hero_title or "Transform Your Business Vision Into Reality" }}
+        </h1>
+        <p class="hero-subtitle">
+          {{ module.hero_subtitle or "Unlock growth potential with our innovative solutions designed to elevate your business to new heights." }}
+        </p>
+        <div class="hero-buttons">
+          {% if module.primary_button_text %}
+            <a href="{{ module.primary_button_url or '#' }}" class="btn btn-primary">
+              {{ module.primary_button_text }}
+            </a>
+          {% endif %}
+          {% if module.secondary_button_text %}
+            <a href="{{ module.secondary_button_url or '#' }}" class="btn btn-secondary">
+              {{ module.secondary_button_text }}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="hero-decorations">
+        <div class="hero-decoration hero-decoration-1"></div>
+        <div class="hero-decoration hero-decoration-2"></div>
+        <div class="hero-decoration hero-decoration-3"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <div class="scroll-icon"></div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "theme_settings",
+    "label": "Theme Settings",
+    "children": [
+      {
+        "id": "primary_color",
+        "label": "Primary Color",
+        "type": "color",
+        "default": "#0080CC"
+      },
+      {
+        "id": "secondary_color", 
+        "label": "Secondary Color",
+        "type": "color",
+        "default": "#F8FAFC"
+      },
+      {
+        "id": "company_name",
+        "label": "Company Name",
+        "type": "text",
+        "default": "Business Pro"
+      },
+      {
+        "id": "company_logo",
+        "label": "Company Logo",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Company Logo"
+        }
+      },
+      {
+        "id": "contact_email",
+        "label": "Contact Email",
+        "type": "text",
+        "default": "hello@businesspro.com"
+      },
+      {
+        "id": "contact_phone",
+        "label": "Contact Phone",
+        "type": "text",
+        "default": "+1 (555) 123-4567"
+      },
+      {
+        "id": "social_facebook",
+        "label": "Facebook URL",
+        "type": "text",
+        "default": ""
+      },
+      {
+        "id": "social_twitter",
+        "label": "Twitter URL", 
+        "type": "text",
+        "default": ""
+      },
+      {
+        "id": "social_linkedin",
+        "label": "LinkedIn URL",
+        "type": "text", 
+        "default": ""
+      },
+      {
+        "id": "social_instagram",
+        "label": "Instagram URL",
+        "type": "text",
+        "default": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "company_description",
+    "label": "Company Description",
+    "type": "richtext",
+    "default": "Transforming businesses with innovative solutions and cutting-edge technology. Your success is our mission."
+  },
+  {
+    "id": "company_address",
+    "label": "Company Address",
+    "type": "text",
+    "default": "San Francisco, CA"
+  },
+  {
+    "id": "quick_links",
+    "label": "Quick Links",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 6
+    },
+    "default": [
+      { "text": "About Us", "url": "/about" },
+      { "text": "Services", "url": "/services" },
+      { "text": "Products", "url": "/products" },
+      { "text": "Case Studies", "url": "/case-studies" },
+      { "text": "Blog", "url": "/blog" },
+      { "text": "Careers", "url": "/careers" }
+    ],
+    "children": [
+      {
+        "id": "text",
+        "label": "Link Text",
+        "type": "text"
+      },
+      {
+        "id": "url",
+        "label": "Link URL",
+        "type": "url"
+      }
+    ]
+  },
+  {
+    "id": "support_links",
+    "label": "Support Links",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 10,
+      "default": 6
+    },
+    "default": [
+      { "text": "Help Center", "url": "/help" },
+      { "text": "Documentation", "url": "/docs" },
+      { "text": "Contact Support", "url": "/support" },
+      { "text": "Community", "url": "/community" },
+      { "text": "Status Page", "url": "/status" },
+      { "text": "Terms of Service", "url": "/terms" }
+    ],
+    "children": [
+      {
+        "id": "text",
+        "label": "Link Text",
+        "type": "text"
+      },
+      {
+        "id": "url",
+        "label": "Link URL",
+        "type": "url"
+      }
+    ]
+  },
+  {
+    "id": "show_newsletter",
+    "label": "Show Newsletter Signup",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "newsletter_text",
+    "label": "Newsletter Text",
+    "type": "text",
+    "default": "Subscribe to our newsletter"
+  },
+  {
+    "id": "privacy_policy_url",
+    "label": "Privacy Policy URL",
+    "type": "url",
+    "default": "/privacy"
+  },
+  {
+    "id": "cookie_policy_url",
+    "label": "Cookie Policy URL", 
+    "type": "url",
+    "default": "/cookies"
+  }
+]

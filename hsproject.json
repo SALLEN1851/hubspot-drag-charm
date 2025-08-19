@@ -1,0 +1,6 @@
+{
+  "name": "business-pro-theme",
+  "srcDir": "src/theme",
+  "platformVersion": "UI_EXTENSIONS",
+  "type": "cms-theme"
+}

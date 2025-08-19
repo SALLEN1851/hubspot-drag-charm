@@ -1,0 +1,81 @@
+[
+  {
+    "id": "cta_title",
+    "label": "CTA Title",
+    "type": "richtext",
+    "default": "Ready to Get<br><span class=\"text-accent\">Started?</span>"
+  },
+  {
+    "id": "cta_subtitle",
+    "label": "CTA Subtitle",
+    "type": "richtext",
+    "default": "Join thousands of satisfied customers who have transformed their business with our solutions."
+  },
+  {
+    "id": "show_email_form",
+    "label": "Show Email Signup Form",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "email_placeholder",
+    "label": "Email Input Placeholder",
+    "type": "text",
+    "default": "Enter your email address"
+  },
+  {
+    "id": "form_button_text",
+    "label": "Form Submit Button Text",
+    "type": "text",
+    "default": "Get Started"
+  },
+  {
+    "id": "form_action",
+    "label": "Form Action URL",
+    "type": "url",
+    "default": "#",
+    "help_text": "The URL where the form should submit to"
+  },
+  {
+    "id": "form_disclaimer",
+    "label": "Form Disclaimer Text",
+    "type": "richtext",
+    "default": "No spam, unsubscribe at any time. By signing up, you agree to our terms of service."
+  },
+  {
+    "id": "primary_button_text",
+    "label": "Primary Button Text",
+    "type": "text",
+    "default": "Start Free Trial"
+  },
+  {
+    "id": "primary_button_url",
+    "label": "Primary Button URL",
+    "type": "url",
+    "default": "/signup"
+  },
+  {
+    "id": "secondary_button_text",
+    "label": "Secondary Button Text",
+    "type": "text",
+    "default": "Schedule Demo"
+  },
+  {
+    "id": "secondary_button_url",
+    "label": "Secondary Button URL",
+    "type": "url",
+    "default": "/demo"
+  },
+  {
+    "id": "trust_indicators",
+    "label": "Show Trust Indicators",
+    "type": "boolean",
+    "default": true
+  },
+  {
+    "id": "trust_text",
+    "label": "Trust Indicators Text",
+    "type": "text",
+    "default": "✓ 30-day free trial • ✓ No credit card required • ✓ Cancel anytime"
+  }
+]

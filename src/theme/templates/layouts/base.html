@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{ page_meta.html_lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- SEO Meta Tags -->
+  <title>{% if page_meta.name %}{{ page_meta.name }} | {% endif %}{{ theme_settings.company_name }}</title>
+  <meta name="description" content="{{ page_meta.meta_description }}">
+  <meta name="author" content="{{ theme_settings.company_name }}">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="{% if page_meta.name %}{{ page_meta.name }} | {% endif %}{{ theme_settings.company_name }}">
+  <meta property="og:description" content="{{ page_meta.meta_description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.url }}">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page_meta.name %}{{ page_meta.name }} | {% endif %}{{ theme_settings.company_name }}">
+  <meta name="twitter:description" content="{{ page_meta.meta_description }}">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="{{ get_asset_url('../assets/favicon.ico') }}">
+  
+  <!-- Standard HubSpot head -->
+  {{ standard_header_includes }}
+  
+  <!-- Theme Styles -->
+  {{ require_css(get_asset_url("../styles/theme.css")) }}
+  
+  <!-- Custom CSS Variables -->
+  <style>
+    :root {
+      --primary-color: {{ theme_settings.primary_color or '#0080CC' }};
+      --secondary-color: {{ theme_settings.secondary_color or '#F8FAFC' }};
+      --company-name: "{{ theme_settings.company_name or 'Business Pro' }}";
+    }
+  </style>
+</head>
+
+<body class="{{ builtin_body_classes }}">
+  
+  <!-- Header -->
+  <header id="main-header" class="site-header">
+    {% dnd_area "header" label="Header", class="dnd-header" %}
+      {% dnd_module path="../components/modules/header.module" %}
+      {% end_dnd_module %}
+    {% end_dnd_area %}
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" role="main">
+    {% block body %}{% endblock body %}
+  </main>
+
+  <!-- Footer -->
+  <footer id="main-footer" class="site-footer">
+    {% dnd_area "footer" label="Footer", class="dnd-footer" %}
+      {% dnd_module path="../components/modules/footer.module" %}
+      {% end_dnd_module %}
+    {% end_dnd_area %}
+  </footer>
+
+  <!-- Standard HubSpot footer -->
+  {{ standard_footer_includes }}
+  
+  <!-- Theme Scripts -->
+  {{ require_js(get_asset_url("../assets/theme.js")) }}
+
+</body>
+</html>
