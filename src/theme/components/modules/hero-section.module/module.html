@@ -1,37 +1,47 @@
 {% set hero_bg = module.hero_background.src or get_asset_url("../../assets/hero-bg.jpg") %}
 
-<section class="hero-section" style="background-image: url('{{ hero_bg }}');">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="container">
-      <div class="hero-text">
-        <h1 class="hero-title">
-          {{ module.hero_title or "Transform Your Business Vision Into Reality" }}
-        </h1>
-        <p class="hero-subtitle">
-          {{ module.hero_subtitle or "Unlock growth potential with our innovative solutions designed to elevate your business to new heights." }}
-        </p>
-        <div class="hero-buttons">
-          {% if module.primary_button_text %}
-            <a href="{{ module.primary_button_url or '#' }}" class="btn btn-primary">
-              {{ module.primary_button_text }}
-            </a>
-          {% endif %}
-          {% if module.secondary_button_text %}
-            <a href="{{ module.secondary_button_url or '#' }}" class="btn btn-secondary">
-              {{ module.secondary_button_text }}
-            </a>
-          {% endif %}
-        </div>
-      </div>
-      <div class="hero-decorations">
-        <div class="hero-decoration hero-decoration-1"></div>
-        <div class="hero-decoration hero-decoration-2"></div>
-        <div class="hero-decoration hero-decoration-3"></div>
-      </div>
+<section class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat overflow-hidden" style="background-image: url('{{ hero_bg }}');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-hero opacity-90"></div>
+  
+  <!-- Floating decorations -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float"></div>
+    <div class="absolute bottom-32 right-10 w-16 h-16 bg-white/10 rounded-full animate-float" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/2 right-20 w-12 h-12 bg-white/10 rounded-full animate-float" style="animation-delay: 2s;"></div>
+  </div>
+  
+  <!-- Content -->
+  <div class="relative z-10 text-center text-white px-4 py-8 max-w-6xl mx-auto">
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in">
+      {{ module.hero_title or "Transform Your<br><span class=\"text-primary-glow\">Business Vision</span><br>Into Reality" }}
+    </h1>
+    
+    <p class="text-lg md:text-xl lg:text-2xl mb-8 opacity-90 max-w-4xl mx-auto leading-relaxed animate-fade-in" style="animation-delay: 0.2s;">
+      {{ module.hero_subtitle or "Unlock growth potential with our innovative solutions designed to elevate your business to new heights." }}
+    </p>
+    
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in" style="animation-delay: 0.4s;">
+      {% if module.primary_button_text %}
+        <a href="{{ module.primary_button_url or '#' }}" 
+           class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-foreground bg-primary border-2 border-primary rounded-lg transition-all duration-300 hover:bg-primary/90 hover:-translate-y-1 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-transparent">
+          {{ module.primary_button_text }}
+        </a>
+      {% endif %}
+      {% if module.secondary_button_text %}
+        <a href="{{ module.secondary_button_url or '#' }}" 
+           class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-transparent border-2 border-white rounded-lg transition-all duration-300 hover:bg-white hover:text-primary hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent">
+          {{ module.secondary_button_text }}
+          <span aria-hidden="true" class="ml-2">→</span>
+        </a>
+      {% endif %}
     </div>
   </div>
-  <div class="hero-scroll-indicator">
-    <div class="scroll-icon"></div>
+  
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+    </div>
   </div>
 </section>
