@@ -1,6 +1,6 @@
 {
   "name": "business-pro-theme",
   "srcDir": "src/theme",
-  "platformVersion": "UI_EXTENSIONS",
+  "platformVersion": "2023.2",
   "type": "cms-theme"
 }
